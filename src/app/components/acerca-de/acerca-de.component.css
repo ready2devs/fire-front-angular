@@ -1,0 +1,25 @@
+.card{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+@media (min-width: 768px){
+    .perfil{
+        position: absolute;
+        /* width:50%; */
+        left: 60px;
+        top: 450px;
+        /* align-self: flex-start; */
+    }
+    .row{
+        height: 200px;
+        /* justify-content: space-between; */
+    }
+    .acerca{
+        padding-left: 260px;
+    }
+}
+.card img{
+    border-radius:50%;
+}
+
