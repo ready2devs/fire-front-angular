@@ -1,36 +1,244 @@
 <div class="container-fluid my-3 px-5">
-    <article class="educacion text-bg-light p-3 rounded">
-        <div class="container-fluid">
-            <div class="row d-flex justify-content-between">
-                <div class="col-10 mb-4">
-                    <h4>Hard & Soft Skills</h4>
+
+    <div class="row m-0 text-bg-light p-3 text-center d-flex rounded">
+        
+        <div class="titulo-section col-10 mb-4">
+            <h4>Hard & Soft Skills</h4>
+        </div>
+        <div class="col-2 div_add">
+            <i class="fa-solid fa-plus"></i>
+        </div>
+    
+        <div class="d-flex align-content-start flex-wrap">
+
+             <div class="contenedor-skills">
+                <div class="row">
+                    <circle-progress
+                    [percent]="95"
+                    [radius]="100"
+                    [showUnits]="false"
+                    [title]="'HTML'"
+                    [titleFontSize]="'3em'"
+                    [showUnits]="false"
+                    [titleColor]="'#4e4e4e'"
+                    [titleFontSize]="'2em'"
+                    [showSubtitle]="false"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#F9E79F'"
+                    [innerStrokeColor]="'#4e4e4e'"
+                    [animation]="true"
+                    [animationDuration]="900"
+                    ></circle-progress>
                 </div>
-                <div class="col-2 div_add">
-                  <i class="fa-solid fa-plus"></i>
+            </div>   
+        
+            <div class="contenedor-skills">
+                <div class="row">
+                    <circle-progress
+                    [percent]="90"
+                    [radius]="100"
+                    [showUnits]="false"
+                    [title]="'CSS'"
+                    [titleFontSize]="'3em'"
+                    [showUnits]="false"
+                    [titleColor]="'#4e4e4e'"
+                    [titleFontSize]="'2em'"
+                    [showSubtitle]="false"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#ABEBC6'"
+                    [innerStrokeColor]="'#4e4e4e'"
+                    [animation]="true"
+                    [animationDuration]="900"
+                    ></circle-progress>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-2">
-                   <img src="https://logosave.com/images/small/common/02/universidad-de-buenos-aires-vector-logo.png" alt="logo-experiencia" class="img-thumbnail img-logo-responsive"/>
-                </div>
-                <div class="col-8 descripcion-educacion">
-                   <h5 class="educacion-titulo">Licenciado en Administración</h5>
-                   <p class="educacion-detalle">Completo</p>
-                   <p class="educacion-fecja-inicio" style="display:inline">2008</p> <p style="display:inline">-</p>
-                   <p class="educacion-fecha-finalizacion" style="display:inline">2013</p>
-                   <p class="institucion">Universidad de Buenos Aires - Facultad de Ciencias Económicas</p>
-                </div>
-               
-                <div class="col-2 div_deladd">
-                    <ul>                         
-                        <li><i class="fa-solid fa-trash"></i></li>                            
-                        <li><i class="fa-solid fa-pen"></i></li> 
-                    </ul>
+
+            <div class="contenedor-skills">
+                <div class="row">
+                    <circle-progress
+                    [percent]="75"
+                    [radius]="100"
+                    [showUnits]="false"
+                    [title]="'JS'"
+                    [titleFontSize]="'3em'"
+                    [showUnits]="false"
+                    [titleColor]="'#4e4e4e'"
+                    [titleFontSize]="'2em'"
+                    [showSubtitle]="false"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#EDBB99'"
+                    [innerStrokeColor]="'#4e4e4e'"
+                    [animation]="true"
+                    [animationDuration]="900"
+                    ></circle-progress>
                 </div>
             </div>
+
+            <div class="contenedor-skills">
+                <div class="row">
+                    <circle-progress
+                    [percent]="75"
+                    [radius]="100"
+                    [showUnits]="false"
+                    [title]="'TypeScript'"
+                    [titleFontSize]="'3em'"
+                    [showUnits]="false"
+                    [titleColor]="'#4e4e4e'"
+                    [titleFontSize]="'2em'"
+                    [showSubtitle]="false"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#D2B4DE'"
+                    [innerStrokeColor]="'#4e4e4e'"
+                    [animation]="true"
+                    [animationDuration]="900"
+                    ></circle-progress>
+                </div>
+            </div>
+
+            <div class="contenedor-skills">
+                <div class="row">
+                    <circle-progress
+                    [percent]="85"
+                    [radius]="100"
+                    [showUnits]="false"
+                    [title]="'Angular'"
+                    [titleFontSize]="'3em'"
+                    [showUnits]="false"
+                    [titleColor]="'#4e4e4e'"
+                    [titleFontSize]="'2em'"
+                    [showSubtitle]="false"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#AEB6BF'"
+                    [innerStrokeColor]="'#4e4e4e'"
+                    [animation]="true"
+                    [animationDuration]="900"
+                    ></circle-progress>
+                </div>
+            </div>
+
+            <div class="contenedor-skills">
+                <div class="row">
+                    <circle-progress
+                    [percent]="95"
+                    [radius]="100"
+                    [showUnits]="false"
+                    [title]="'GitHub'"
+                    [titleFontSize]="'3em'"
+                    [showUnits]="false"
+                    [titleColor]="'#4e4e4e'"
+                    [titleFontSize]="'2em'"
+                    [showSubtitle]="false"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#F5B7B1'"
+                    [innerStrokeColor]="'#4e4e4e'"
+                    [animation]="true"
+                    [animationDuration]="900"
+                    ></circle-progress>
+                </div>
+            </div>
+
+            <div class="contenedor-skills">
+                <div class="row">
+                    <circle-progress
+                    [percent]="80"
+                    [radius]="100"
+                    [showUnits]="false"
+                    [title]="'Java'"
+                    [titleFontSize]="'3em'"
+                    [showUnits]="false"
+                    [titleColor]="'#4e4e4e'"
+                    [titleFontSize]="'2em'"
+                    [showSubtitle]="false"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#AED6F1'"
+                    [innerStrokeColor]="'#4e4e4e'"
+                    [animation]="true"
+                    [animationDuration]="900"
+                    ></circle-progress>
+                </div>
+            </div>
+
+            <div class="contenedor-skills">
+                <div class="row">
+                    <circle-progress
+                    [percent]="90"
+                    [radius]="100"
+                    [showUnits]="false"
+                    [title]="'Comunicación'"
+                    [titleFontSize]="'3em'"
+                    [showUnits]="false"
+                    [titleColor]="'#4e4e4e'"
+                    [titleFontSize]="'1.5em'"
+                    [showSubtitle]="false"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#167F92'"
+                    [innerStrokeColor]="'#4e4e4e'"
+                    [animation]="true"
+                    [animationDuration]="900"
+                    ></circle-progress>
+                </div>
+            </div>
+
+            <div class="contenedor-skills">
+                <div class="row">
+                    <circle-progress
+                    [percent]="90"
+                    [radius]="100"
+                    [showUnits]="false"
+                    [title]="'Liderazgo'"
+                    [titleFontSize]="'3em'"
+                    [showUnits]="false"
+                    [titleColor]="'#4e4e4e'"
+                    [titleFontSize]="'2em'"
+                    [showSubtitle]="false"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#73C6B6'"
+                    [innerStrokeColor]="'#4e4e4e'"
+                    [animation]="true"
+                    [animationDuration]="900"
+                    ></circle-progress>
+                </div>
+            </div>
+
+            <div class="contenedor-skills">
+                <div class="row">
+                    <circle-progress
+                    [percent]="95"
+                    [radius]="100"
+                    [showUnits]="false"
+                    [title]="'Teamwork'"
+                    [titleFontSize]="'1.5em'"
+                    [showUnits]="false"
+                    [titleColor]="'#4e4e4e'"
+                    [titleFontSize]="'2em'"
+                    [showSubtitle]="false"
+                    [outerStrokeWidth]="16"
+                    [innerStrokeWidth]="8"
+                    [outerStrokeColor]="'#AF7AC5'"
+                    [innerStrokeColor]="'#4e4e4e'"
+                    [animation]="true"
+                    [animationDuration]="900"
+                    ></circle-progress>
+                </div>
+            </div>
+
         </div>
-    </article>
+        <div class="div_deladd d-flex justify-content-end">
+            <ul>                         
+                <li><i class="fa-solid fa-trash"></i></li>                            
+                <li><i class="fa-solid fa-pen"></i></li> 
+            </ul>
+        </div>
+
+    </div>  
 </div>
 
