@@ -14,6 +14,7 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from "@angular/common/http";
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,7 +35,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

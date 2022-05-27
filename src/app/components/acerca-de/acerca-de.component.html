@@ -4,15 +4,14 @@
         <div class="card perfil align-self-start text-center" style="width: 16rem;">
             <img src="../../../assets/Imagen para portfolio.png" class="card-img-top" alt="Foto Luciano Sica">
             <div class="card-body">
-                <h5 class="card-title">Luciano Leandro Sica</h5>
-                <p class="card-text">Full Stack Developer Jr</p>
+                <h5 class="card-title">{{persona.nombre}} {{persona.apellido}}</h5>
+                <p class="card-text-titulo">{{persona.titulo}}</p>
             </div> 
         </div>
         <div class="card acerca">
             <div class="card-body col align-self-start">
               <h5 class="card-title">Acerca de mi</h5>
-              <p class="card-text">Apasionado por las nuevas tecnologías, los negocios digitales, la ciencia de datos y la inteligencia artificial. <br>
-                Busco aprender nuevas herramientas que potencien mis conocimientos y habilidades.</p>
+              <p class="card-text-descripcion">{{persona.about}}</p>
             </div>    
         </div>
         <div class="editar-perfil text-right float-right position-relative">
