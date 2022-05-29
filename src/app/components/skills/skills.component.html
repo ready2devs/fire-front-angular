@@ -2,38 +2,49 @@
 
     <div class="row m-0 text-bg-light p-3 text-center d-flex rounded">
         
-        <div class="titulo-section col-10 mb-4">
-            <h4>Hard & Soft Skills</h4>
-        </div>
-        <div class="col-2 div_add">
-            <i class="fa-solid fa-plus"></i>
-        </div>
-    
-        <div class="d-flex align-content-start flex-wrap">
-
-             <div class="contenedor-skills">
-                <div class="row">
-                    <circle-progress
-                    [percent]="95"
-                    [radius]="100"
-                    [showUnits]="false"
-                    [title]="'HTML'"
-                    [titleFontSize]="'3em'"
-                    [showUnits]="false"
-                    [titleColor]="'#4e4e4e'"
-                    [titleFontSize]="'2em'"
-                    [showSubtitle]="false"
-                    [outerStrokeWidth]="16"
-                    [innerStrokeWidth]="8"
-                    [outerStrokeColor]="'#F9E79F'"
-                    [innerStrokeColor]="'#4e4e4e'"
-                    [animation]="true"
-                    [animationDuration]="900"
-                    ></circle-progress>
-                </div>
-            </div>   
         
-            <div class="contenedor-skills">
+            <div class="titulo-section col-10 mb-4">
+                <h4>Hard & Soft Skills</h4>
+            </div>
+            <div class="col-2 div_add">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+        
+
+            <div class="habilidades container-fluid mb-3 align-items-start" >
+                <div class="d-inline-flex flex-wrap " *ngFor="let skill of skills">
+                    
+                    <div class="contenedor-skills" >
+                        
+                        <div class="row">
+                            <circle-progress
+                            [percent]="skill.porcentaje"
+                            [radius]="100"
+                            [showUnits]="false"
+                            [title]="skill.nombreSkill"
+                            [titleFontSize]="'1.5em'"
+                            [showUnits]="false"
+                            [titleColor]="'#4e4e4e'"
+                            [showSubtitle]="false"
+                            [outerStrokeWidth]="16"
+                            [innerStrokeWidth]="8"
+                            [outerStrokeColor]="'#4C2882'"
+                            [innerStrokeColor]="'#4e4e4e'"
+                            [animation]="true"
+                            [animationDuration]="900"
+                            ></circle-progress>
+                        </div>
+                    </div> 
+                    
+                    <div class="div_deladd d-flex justify-content-start">
+                        <ul>                         
+                            <li><i class="fa-solid fa-trash"></i></li>                            
+                            <li><i class="fa-solid fa-pen"></i></li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="contenedor-skills">
                 <div class="row">
                     <circle-progress
                     [percent]="90"
@@ -237,7 +248,7 @@
                 <li><i class="fa-solid fa-trash"></i></li>                            
                 <li><i class="fa-solid fa-pen"></i></li> 
             </ul>
-        </div>
+        </div> -->
 
     </div>  
 </div>

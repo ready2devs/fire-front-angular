@@ -1,79 +1,94 @@
 <div class="container-fluid my-3 px-5">
 
-    <div class="row m-0 text-bg-light p-3 rounded">
-        <div class="contenedor-titulo p-0 d-flex justify-content-between mb-2">
-            <div class="titulo-section">
+    <article class="proyectos text-bg-light p-3 rounded">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-between">
+                <div class="col-10 mb-3">
+                    <h4>Proyectos</h4>
+                </div>
+                <div class="col-2 div_add">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="row d-flex justify-content-between">
+            <div class="col-10 mb-3">
                 <h4>Proyectos</h4>
             </div>
             <div class="div_add">
                 <i class="fa-solid fa-plus"></i>
             </div>
-        </div>
-
-        <div class="d-flex align-content-start flex-wrap mb-4">
-            <div class="descripcion-proyecto mb-4 ml-3 pl-3 col-sm-11 col-md-8 col-lg-7">
-                <h6 class="titulo-proyecto">Portfolio Web Fullstack</h6>  
-                <p class="detalle-proyecto"> Segunda parte de Argentina Programa, etapa: #YoProgramo, donde implementamos en un portfolio personal las tecnologías que fuimos aprendiendo para ser Desarrolladores web fullstack junior.</p>
-                <p class="fecha-inicio-proyecto p-0" style="display:inline">2021</p>
-                <p class="separador p-0" style="display:inline">-</p>
-                <p class="fecha-finalizacion-proyecto p-0" style="display:inline">2022</p>
-            </div>
-            <div class="foto-proyecto ml-3 mb-4 col-sm-11 col-md-3 col-lg-4">
-                <img src="../../../assets/proyecto yoprogramo.png" alt="Imagen portfolio" class="img-fluid">
-            </div>
-
-            <div class="div_deladd col-sm-1 col-md-1 col-lg-1 d-flex justify-content-end ">
-                <ul>                         
-                    <li><i class="fa-solid fa-trash"></i></li>                            
-                    <li><i class="fa-solid fa-pen"></i></li> 
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="d-flex align-content-start flex-wrap">
-            <div class="descripcion-proyecto mb-4 ml-3 pl-3 col-sm-11 col-md-8 col-lg-7">
-                <h6 class="titulo-proyecto">Tablero de control operativo</h6>  
-                <p class="detalle-proyecto"> Diseño de tablero de control operativo para la visualización de metricas de gestión - Uso de la herramienta Power BI para la visualización de indicadores y el acceso a reportes.</p>
-                <p class="fecha-inicio-proyecto p-0" style="display:inline">2019</p>
-                <p class="separador p-0" style="display:inline">-</p>
-                <p class="fecha-finalizacion-proyecto p-0" style="display:inline">2019</p>
-            </div>
-            <div class="foto-proyecto ml-3 mb-4 col-sm-11 col-md-3 col-lg-4">
-                <img src="../../../assets/Power Business Intelligence (BI).png" alt="Imagen portfolio" class="img-fluid">
-            </div>
-
-            <div class="div_deladd col-sm-1 col-md-1 col-lg-1 d-flex justify-content-end ">
-                <ul>                         
-                    <li><i class="fa-solid fa-trash"></i></li>                            
-                    <li><i class="fa-solid fa-pen"></i></li> 
-                </ul>
-            </div>
-
-        </div>
-        
-        
-        <!-- <div class="row m-0 p-0">
-            <div class="col-2">
-                <img src="https://yt3.ggpht.com/9upo5zbtXzvItj8IMHF1X9hI95x4YOeGCApLk1DhMQCHftmJvf2GWmbJXrC1TKCrn-AyQ2txBw=s900-c-k-c0x00ffffff-no-rj" alt="logo-experiencia" class="img-thumbnail img-logo-responsive"/>
-            </div>
-            <div class="col-8 descripcion-proyecto ml-3">
-                <h5 class="titulo-proyecto">Portfolio Web Fullstack</h5>
-                <p class="institucion-proyecto">Argentina Programa</p>
-                <p>Diciembre 2021 - Actualidad</p>
-                <p>Angular - Java/SpringBoot - MySql</p>
-                <p><a href="https://www.google.com">https://fire-front-angular.web.app/</a></p>
-            </div>
-            <div class="col-2 div_deladd align-self-end">
-                <ul>                         
-                    <li><i class="fa-solid fa-trash"></i></li>                            
-                    <li><i class="fa-solid fa-pen"></i></li>  
-                </ul>
-            </div>
         </div> -->
 
+    
+        <div class="container-fluid my-0">
 
-        
+            <div class="d-flex align-content-start flex-wrap my-3" *ngFor="let proyecto of proyectos">
+                <div class="descripcion-proyecto mb-4 ml-3 pl-3 col-sm-11 col-md-8 col-lg-7">
+                    <h6 class="titulo-proyecto">{{proyecto.title}}</h6>  
+                    <p class="detalle-proyecto"> {{proyecto.detail}}</p>
+                    <p class="fecha-inicio-proyecto p-0" style="display:inline">{{proyecto.start}}</p>
+                    <p class="separador p-0" style="display:inline">-</p>
+                    <p class="fecha-finalizacion-proyecto p-0" style="display:inline">{{proyecto.end}}</p>
+                </div>
+                <div class="foto-proyecto ml-3 mb-4 col-sm-11 col-md-3 col-lg-4">
+                    <img src="{{proyecto.imgProyecto}}" alt="Imagen proyecto" class="img-fluid">
+                </div>
 
-    </div>
+                <div class="div_deladd col-sm-1 col-md-1 col-lg-1 d-flex justify-content-end ">
+                    <ul>                         
+                        <li><i class="fa-solid fa-trash"></i></li>                            
+                        <li><i class="fa-solid fa-pen"></i></li> 
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- <div class="d-flex align-content-start flex-wrap">
+                <div class="descripcion-proyecto mb-4 ml-3 pl-3 col-sm-11 col-md-8 col-lg-7">
+                    <h6 class="titulo-proyecto">Tablero de control operativo</h6>  
+                    <p class="detalle-proyecto"> Diseño de tablero de control operativo para la visualización de metricas de gestión - Uso de la herramienta Power BI para la visualización de indicadores y el acceso a reportes.</p>
+                    <p class="fecha-inicio-proyecto p-0" style="display:inline">2019</p>
+                    <p class="separador p-0" style="display:inline">-</p>
+                    <p class="fecha-finalizacion-proyecto p-0" style="display:inline">2019</p>
+                </div>
+                <div class="foto-proyecto ml-3 mb-4 col-sm-11 col-md-3 col-lg-4">
+                    <img src="../../../assets/Power Business Intelligence (BI).png" alt="Imagen portfolio" class="img-fluid">
+                </div>
+
+                <div class="div_deladd col-sm-1 col-md-1 col-lg-1 d-flex justify-content-end ">
+                    <ul>                         
+                        <li><i class="fa-solid fa-trash"></i></li>                            
+                        <li><i class="fa-solid fa-pen"></i></li> 
+                    </ul>
+                </div>
+
+            </div> -->
+            
+            
+            <!-- <div class="row m-0 p-0">
+                <div class="col-2">
+                    <img src="https://yt3.ggpht.com/9upo5zbtXzvItj8IMHF1X9hI95x4YOeGCApLk1DhMQCHftmJvf2GWmbJXrC1TKCrn-AyQ2txBw=s900-c-k-c0x00ffffff-no-rj" alt="logo-experiencia" class="img-thumbnail img-logo-responsive"/>
+                </div>
+                <div class="col-8 descripcion-proyecto ml-3">
+                    <h5 class="titulo-proyecto">Portfolio Web Fullstack</h5>
+                    <p class="institucion-proyecto">Argentina Programa</p>
+                    <p>Diciembre 2021 - Actualidad</p>
+                    <p>Angular - Java/SpringBoot - MySql</p>
+                    <p><a href="https://www.google.com">https://fire-front-angular.web.app/</a></p>
+                </div>
+                <div class="col-2 div_deladd align-self-end">
+                    <ul>                         
+                        <li><i class="fa-solid fa-trash"></i></li>                            
+                        <li><i class="fa-solid fa-pen"></i></li>  
+                    </ul>
+                </div>
+            </div> -->
+
+
+            
+
+        </div>
+    </article>
 </div>

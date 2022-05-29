@@ -1,5 +1,5 @@
 <div class="container-fluid my-3 px-5">
-    <article class="experiencia text-bg-light p-3 rounded">
+    <article class="experiencia text-bg-light p-3 rounded pb-1">
         <div class="container-fluid">
             <div class="row d-flex justify-content-between">
                 <div class="col-10 mb-3">
@@ -11,16 +11,16 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row">
+            <div class="row my-4" *ngFor="let experiencia of experiencias">
                 <div class="col-2">
-                   <img src="../../../assets/Logo-TOTVS.jpg" alt="logo-totvs" class="img-thumbnail img-logo-responsive"/>
+                   <img src="{{experiencia.imgExp}}" alt="logo-experiencia" class="img-thumbnail img-logo-responsive"/>
                 </div>
                 <div class="col-8 descripcion-experiencia">
-                   <h5 class="experiencia-puesto">Consultor Funcional de Sistemas</h5>
-                   <p class="experiencia-descripcion">Implementación de proyectos ERP - lider de proyectos</p>
-                   <p class="experiencia-anio-inicio" style="display:inline">2006</p> <p style="display:inline">-</p>
-                   <p class="experiencia-anio-finalizacion" style="display:inline">2008</p>
-                   <p class="experiencia-empresa">TOTVS</p>
+                   <h5 class="experiencia-puesto">{{experiencia.position}}</h5>
+                   <p class="experiencia-descripcion">{{experiencia.description}}</p>
+                   <p class="experiencia-anio-inicio" style="display:inline">{{experiencia.start}}</p> <p style="display:inline">-</p>
+                   <p class="experiencia-anio-finalizacion" style="display:inline">{{experiencia.end}}</p>
+                   <p class="experiencia-empresa">{{experiencia.organization}}</p>
                 </div>
                
                 <div class="col-2 div_deladd">

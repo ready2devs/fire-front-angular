@@ -20,20 +20,31 @@
     /* height: 100%; */
     display: flex;
     flex-direction: column;
-    text-align: right;
+    text-align: left;
     margin-bottom: 0;
-    /* justify-content: end;  */
+    justify-content: end;
     gap: 1rem;
+    padding: 0;
 }
 
 .div_deladd ul li{
     list-style-type: none;
 }
 
-.contenedor-skills{
+/* .contenedor-skills{
     display:inline;
-}
+} */
 
 .titulo-section{
     text-align: left;
+}
+
+.habilidades{
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center;
+    align-content: center;
+    align-self: center; */
+    justify-content: space-around;
+    gap: 1rem;
 }

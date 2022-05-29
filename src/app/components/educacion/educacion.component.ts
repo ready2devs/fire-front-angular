@@ -19,7 +19,7 @@ export class EducacionComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // conecto con el componente Educacion
+    
 
     this.getdatosEdu();
     
@@ -38,23 +38,6 @@ export class EducacionComponent implements OnInit {
       }
     })
   }
-
-
-
-  // ngOnInit(): void {
-  //   this.personaService.getPersona().subscribe(data => {this.persona = data})
-  
-  // }
-
-  //traer los datos de educacion
-  // private getdatosEdu(){
-  //   this.datosEducacion.getEducacion().subscribe(
-  //     (data:Educacion[])=>{
-  //       this.educacionList = data;
-  //       console.log(this.educacionList)
-  //     }
-  //   );
-  // }
 
 
 }
