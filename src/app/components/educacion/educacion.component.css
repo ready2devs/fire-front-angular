@@ -1,8 +1,8 @@
-.educacion{
+/* .educacion{
     margin-top: 1em;    
     padding: 1em;
     
-}
+} */
 
 .descripcion-educacion h5{
     margin: 0px;
@@ -46,4 +46,15 @@
 
 .div_deladd ul li{
     list-style-type: none;
+    text-decoration: none;
 }
+
+/* ul.items-list li div.data-container a {
+    display: flex;
+    text-decoration: none;
+    margin: 0;
+    padding: 0; 
+    list-style-type: none;
+    box-sizing: border-box;
+
+} */

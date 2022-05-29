@@ -1,4 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Educacion } from 'src/app/model/educacion.model';
+import { EducacionService } from 'src/app/service/educacion.service';
 
 @Component({
   selector: 'app-educacion',
@@ -7,9 +10,51 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducacionComponent implements OnInit {
 
-  constructor() { }
+
+  public educaciones:Educacion[]=[];
+
+  constructor(private educacionService:EducacionService,)
+    
+    { }
 
   ngOnInit(): void {
+
+    // conecto con el componente Educacion
+
+    this.getdatosEdu();
+    
+
   }
+
+  // traigo datos en lista
+
+  public getdatosEdu():void{
+    this.educacionService.getEducacion().subscribe({
+      next:(Response: Educacion[]) =>{
+        this.educaciones=Response;
+      },
+      error:(error:HttpErrorResponse)=>{
+        alert(error.message);
+      }
+    })
+  }
+
+
+
+  // ngOnInit(): void {
+  //   this.personaService.getPersona().subscribe(data => {this.persona = data})
+  
+  // }
+
+  //traer los datos de educacion
+  // private getdatosEdu(){
+  //   this.datosEducacion.getEducacion().subscribe(
+  //     (data:Educacion[])=>{
+  //       this.educacionList = data;
+  //       console.log(this.educacionList)
+  //     }
+  //   );
+  // }
+
 
 }

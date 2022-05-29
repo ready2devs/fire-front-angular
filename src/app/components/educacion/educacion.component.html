@@ -1,5 +1,5 @@
 <div class="container-fluid my-3 px-5">
-    <article class="educacion text-bg-light p-3 rounded">
+    <article class="educacion text-bg-light p-3 rounded pb-1">
         <div class="container-fluid">
             <div class="row d-flex justify-content-between">
                 <div class="col-10">
@@ -10,38 +10,20 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid my-3">
-            <div class="row">
-                <div class="col-2">
-                   <img src="../../../assets/Logo-UBA-nuevo-blanco.png" alt="logo-uba" class="img-thumbnail img-logo-responsive"/>
-                </div>
-                <div class="col-8 descripcion-educacion">
-                   <h5 class="educacion-titulo">Licenciado en Administración</h5>
-                   <p class="educacion-detalle">Completo</p>
-                   <p class="educacion-fecha-inicio" style="display:inline">2008</p> <p style="display:inline">-</p>
-                   <p class="educacion-fecha-finalizacion" style="display:inline">2013</p>
-                   <p class="institucion">Universidad de Buenos Aires - Facultad de Ciencias Económicas</p>
-                </div>
-               
-                <div class="col-2 div_deladd">
-                    <ul>                         
-                        <li><i class="fa-solid fa-trash"></i></li>                            
-                        <li><i class="fa-solid fa-pen"></i></li> 
-                    </ul>
-                </div>
-            </div>
-        </div>
+
+
+
         <div class="container-fluid my-4">
-            <div class="row">
+            <div class="row my-4" *ngFor="let educacion of educaciones">
                 <div class="col-2">
-                   <img src="../../../assets/Logo-UBA-nuevo-blanco.png" alt="logo-uba" class="img-thumbnail img-logo-responsive"/>
+                   <img src="{{educacion.imgEdu}}" alt="logo-uba" class="img-thumbnail img-logo-responsive"/>
                 </div>
                 <div class="col-8 descripcion-educacion">
-                   <h5 class="educacion-titulo">Contador Público</h5>
-                   <p class="educacion-detalle">Completo</p>
-                   <p class="educacion-fecha-inicio" style="display:inline">2006</p> <p style="display:inline">-</p>
-                   <p class="educacion-fecha-finalizacion" style="display:inline">2011</p>
-                   <p class="institucion">Universidad de Buenos Aires - Facultad de Ciencias Económicas</p>
+                   <h5 class="educacion-titulo">{{educacion.title}}</h5>
+                   <p class="educacion-detalle">{{educacion.detail}}</p>
+                   <p class="educacion-fecha-inicio" style="display:inline">{{educacion.start}}</p> <p style="display:inline">-</p>
+                   <p class="educacion-fecha-finalizacion" style="display:inline">{{educacion.end}}</p>
+                   <p class="institucion">{{educacion.institution}}</p>
                 </div>
                 <div class="col-2 div_deladd">
                     <ul>                         
@@ -51,7 +33,11 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid my-4">
+
+
+
+
+        <!-- <div class="container-fluid my-4">
             <div class="row">
                 <div class="col-2">
                    <img src="../../../assets/UTN_logo.jpg" alt="logo-utn" class="img-thumbnail img-logo-responsive"/>
@@ -70,6 +56,10 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+
+
+
     </article>
 </div>
