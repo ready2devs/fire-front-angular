@@ -14,7 +14,10 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from "@angular/common/http";
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+// import { LoginDtoComponent } from './config/login-dto/login-dto.component';
 
 
 @NgModule({
@@ -29,14 +32,20 @@ import { FormsModule } from '@angular/forms';
     SkillsComponent,
     ProyectosComponent,
     FooterComponent,
-   
+    LoginComponent,
+    HomeComponent,
+    
   ],
+  
+
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgCircleProgressModule.forRoot({}),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

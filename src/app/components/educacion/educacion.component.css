@@ -30,24 +30,31 @@
     text-align: right;
 }
 
-.div_deladd{
-    padding: 0;
+.data-control{
+    
+    float:right;
+    gap: 0.5rem;
     
 }
 
-.div_deladd ul{
+/* .div_deladd ul{
     height: 100%;
     display: flex;
     flex-direction: column;
     float:right;
     justify-content: end;
     gap: 1rem;
+    justify-content: end;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .div_deladd ul li{
     list-style-type: none;
     text-decoration: none;
-}
+} */
 
 /* ul.items-list li div.data-container a {
     display: flex;

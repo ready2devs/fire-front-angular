@@ -1,3 +1,76 @@
+<!-- Modal -->
+<!-- <div class="modal fade" id="educationForm" tabindex="-1" aria-labelledby="educationFormLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="educationFormLabel">Educacion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="educationForm" (ngSubmit)="onSubmit()">
+            <input type="hidden" name="id" formControlName="id">
+
+
+            <div class="row mb-3">
+                <label for="title" class="col-sm-2 col-form-label">Titulo</label>
+                <div class="col-sm-10">
+                  <input type="text" name="title" formControlName="title" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="detail" class="col-sm-2 col-form-label">Detalle</label>
+              <div class="col-sm-10">
+                <input type="text" name="detail" formControlName="detail" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="start" class="col-sm-2 col-form-label">Año Comienzo</label>
+              <div class="col-sm-10">
+                <input type="start" name="title" formControlName="start" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="end" class="col-sm-2 col-form-label">Año Fin</label>
+              <div class="col-sm-10">
+                <input type="end" name="title" formControlName="end" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="institution" class="col-sm-2 col-form-label">Institución</label>
+              <div class="col-sm-10">
+                <input type="text" name="institution" formControlName="institution" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label for="score" class="col-sm-2 col-form-label">Imagen institución</label>
+              <div class="col-sm-10">
+                <input type="text" name="imgEdu" formControlName="imgEdu" class="form-control" required>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button type="button" class="btn btn-secondary me-4" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
 <div class="container-fluid my-3 px-5">
     <article class="educacion text-bg-light p-3 rounded pb-1">
         <div class="container-fluid">
@@ -5,9 +78,14 @@
                 <div class="col-10">
                     <h4>Educación</h4>
                 </div>
-                <div class="col-2 div_add">
+                    <div *ngIf="isUserLogged" class=" div_add">
+                        <button class="btn btn-right" data-bs-toggle="modal"><i class="fa fa-plus"></i></button>
+                    </div>
+                        <!-- VA LUEGO DE "modal" data-bs-target="#educationForm" (click)="onNewEducation()"> -->
+                
+                <!-- <div class="col-2 div_add">
                   <i class="fa-solid fa-plus"></i>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -25,11 +103,24 @@
                    <p class="educacion-fecha-finalizacion" style="display:inline">{{educacion.end}}</p>
                    <p class="institucion">{{educacion.institution}}</p>
                 </div>
-                <div class="col-2 div_deladd">
-                    <ul>                         
-                        <li><i class="fa-solid fa-trash"></i></li>                            
-                        <li><i class="fa-solid fa-pen"></i></li> 
-                    </ul>
+
+                <div *ngIf="isUserLogged" class="data-control col-2 d-inline-flex justify-content-end align-items-end flex-column p-0 m-0">
+                    
+                    <div class="btn-edit">
+                        <button class="btn btn-right" data-bs-toggle="modal" ><i class="fa fa-pen"></i></button>
+                         <!-- VA LUEGO DE "modal"  data-bs-target="#educationForm" (click)="onEditEducation(i)" -->
+                    </div>
+                    <div class="btn-edit">
+                        <button class="btn btn-right" ><i class="fa fa-trash"></i></button>
+                        <!-- VA LUEGO DE "btn btn-right"  (click)="onDeleteEducation(i)" -->
+                    </div>
+
+                        <!-- <div class="col-2 div_deladd">
+                            <ul>                         
+                                <li><i class="fa-solid fa-trash"></i></li>                            
+                                <li><i class="fa-solid fa-pen"></i></li> 
+                            </ul>
+                        </div> -->
                 </div>
             </div>
         </div>
