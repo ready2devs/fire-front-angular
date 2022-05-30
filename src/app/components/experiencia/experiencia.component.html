@@ -5,8 +5,9 @@
                 <div class="col-10 mb-3">
                     <h4>Experiencia</h4>
                 </div>
-                <div class="col-2 div_add">
-                  <i class="fa-solid fa-plus"></i>
+                <div *ngIf="isUserLogged" class="col-2 div_add">
+                    <button class="btn btn-right" data-bs-toggle="modal"><i class="fa fa-plus"></i></button>
+                    <!-- <i class="fa-solid fa-plus"></i> -->
                 </div>
             </div>
         </div>
@@ -23,12 +24,24 @@
                    <p class="experiencia-empresa">{{experiencia.organization}}</p>
                 </div>
                
-                <div class="col-2 div_deladd">
+                <div *ngIf="isUserLogged" class="data-control col-2 d-inline-flex justify-content-end align-items-end flex-column p-0 m-0">
+                    <div class="btn-edit">
+                        <button class="btn btn-right" data-bs-toggle="modal" ><i class="fa fa-pen"></i></button>
+                    </div>
+                    <div class="btn-edit">
+                        <button class="btn btn-right" ><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+
+
+                <!-- <div class="col-2 div_deladd">
                     <ul>                         
                         <li><i class="fa-solid fa-trash"></i></li>                            
                         <li><i class="fa-solid fa-pen"></i></li> 
                     </ul>
-                </div>
+                </div> -->
+
+
             </div>
         </div>
     </article>

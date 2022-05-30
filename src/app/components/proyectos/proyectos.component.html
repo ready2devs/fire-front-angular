@@ -6,8 +6,9 @@
                 <div class="col-10 mb-3">
                     <h4>Proyectos</h4>
                 </div>
-                <div class="col-2 div_add">
-                  <i class="fa-solid fa-plus"></i>
+                <div *ngIf="isUserLogged" class="col-2 div_add">
+                    <button class="btn btn-right" data-bs-toggle="modal"><i class="fa fa-plus"></i></button>
+                    <!-- <i class="fa-solid fa-plus"></i> -->
                 </div>
             </div>
         </div>
@@ -25,23 +26,38 @@
         <div class="container-fluid my-0">
 
             <div class="d-flex align-content-start flex-wrap my-3" *ngFor="let proyecto of proyectos">
-                <div class="descripcion-proyecto mb-4 ml-3 pl-3 col-sm-11 col-md-8 col-lg-7">
+                
+                <!-- <div class="descripcion-proyecto mb-4 ml-3 pl-3 col-sm-10 col-md-8 col-lg-7"></div> -->
+                
+                <div class="descripcion-proyecto mb-4 ml-3 pl-3 col-7">
                     <h6 class="titulo-proyecto">{{proyecto.title}}</h6>  
                     <p class="detalle-proyecto"> {{proyecto.detail}}</p>
                     <p class="fecha-inicio-proyecto p-0" style="display:inline">{{proyecto.start}}</p>
                     <p class="separador p-0" style="display:inline">-</p>
                     <p class="fecha-finalizacion-proyecto p-0" style="display:inline">{{proyecto.end}}</p>
                 </div>
-                <div class="foto-proyecto ml-3 mb-4 col-sm-11 col-md-3 col-lg-4">
+
+                <!-- <div class="foto-proyecto ml-3 mb-4 col-sm-11 col-md-3 col-lg-4"></div> -->
+
+                <div class="foto-proyecto ml-3 mb-4 col-3">
                     <img src="{{proyecto.imgProyecto}}" alt="Imagen proyecto" class="img-fluid">
                 </div>
 
-                <div class="div_deladd col-sm-1 col-md-1 col-lg-1 d-flex justify-content-end ">
+                <div *ngIf="isUserLogged" class="data-control col-2 d-inline-flex justify-content-end align-items-end flex-column p-0 m-0">
+                    <div class="btn-edit">
+                        <button class="btn btn-right" data-bs-toggle="modal" ><i class="fa fa-pen"></i></button>
+                    </div>
+                    <div class="btn-edit">
+                        <button class="btn btn-right" ><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <!-- <div class="div_deladd col-sm-1 col-md-1 col-lg-1 d-flex justify-content-end ">
                     <ul>                         
                         <li><i class="fa-solid fa-trash"></i></li>                            
                         <li><i class="fa-solid fa-pen"></i></li> 
                     </ul>
-                </div>
+                </div> -->
 
             </div>
 
