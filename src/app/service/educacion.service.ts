@@ -18,12 +18,12 @@ export class EducacionService {
    }
 
 
-   public addEducacion(educacion:Educacion):Observable<any>{
+   public addEducacion(educacion:Educacion):Observable<Educacion>{
     return this.http.post<any>(`${this.apiServerUrl}new/educacion`, educacion);
   }
 
 
-  public updateEducacion(id:number, educacion: Educacion):Observable<any>{
+  public updateEducacion(id: number, educacion: Educacion):Observable<any>{
     return this.http.put<any>(`${this.apiServerUrl}/editar/educacion/${id}`, educacion);
 
   }
