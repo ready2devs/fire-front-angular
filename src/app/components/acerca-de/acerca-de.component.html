@@ -1,23 +1,74 @@
 
-<div class="container-fluid my-3 px-5">
-    <div class="row m-0 text-bg-light p-3 justify-content-center rounded">
-        <div class="card perfil align-self-start text-center" style="width: 16rem;">
-            <img src="{{persona.fotoPerfil}}" class="card-img-top" alt="Foto Luciano Sica">
+<div class="container-fluid my-3 px-5 ">
+    <div class="row m-0 text-bg-light p-3 justify-content-center rounded" *ngFor="let persona of persona">
+        <div class="card perfil align-self-start text-center pb-1" style="width: 16.5rem;">
+            <img src="{{persona.imgProfile}}" class="card-img-top" alt="Foto Luciano Sica">
             <div class="card-body">
-                <h5 class="card-title">{{persona.nombre}} {{persona.apellido}}</h5>
-                <p class="card-text-titulo">{{persona.titulo}}</p>
+                <h5 class="card-title">{{persona.name}} {{persona.surname}}</h5>
+                <p class="card-text-titulo pb-3">{{persona.titleFormation}}</p>
             </div> 
         </div>
-        <div class="card acerca">
+        <div class="card acerca col-11">
             <div class="card-body col align-self-start">
               <h5 class="card-title">Acerca de mi</h5>
               <p class="card-text-descripcion">{{persona.about}}</p>
             </div>    
         </div>
 
-        <div *ngIf="isUserLogged" class="data-control">
-            <div class="editar-perfil text-right float-right position-relative">
-                <i class="fa-solid fa-pen position-absolute bottom-0 end-0"></i>
+        <div *ngIf="isUserLogged" class="data-control col-1 d-inline-flex justify-content-end align-items-end flex-column p-0 m-0">
+            <div class="btn-edit">
+                <button class="btn btn-right" data-toggle="modal" (click)="onOpenModal(persona, 'edit')"><i class="fa fa-pen"></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Editar -->
+
+<div class="modal fade" id="editPersonaModal" tabindex="-1" aria-labelledby="editPersonaModalLabel"
+aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editPersonaModalLabel">Editar {{editPersona?.name}} {{editPersona?.surname}}</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form #editForm="ngForm">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" ngModel="{{editPersona?.name}}" name="name" class="form-control"
+                            id="name" placeholder="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Apellido</label>
+                        <input type="text" ngModel="{{editPersona?.surname}}" name="surname" class="form-control"
+                            id="surname" placeholder="surname">
+                    </div>
+                    <input type="hidden" ngModel="{{editPersona?.id}}" name="id" class="form-control" id="id"
+                        placeholder="Id">
+                    <div class="form-group">
+                        <label for="titleFormation">Formación</label>
+                        <input type="text" ngModel="{{editPersona?.titleFormation}}" name="titleFormation" class="form-control"
+                            id="titleFormation" placeholder="titleFormation">
+                    </div>
+                    <div class="form-group">
+                        <label for="end">Sobre Mi</label>
+                        <input type="text" ngModel="{{editPersona?.about}}" name="about" class="form-control"
+                            id="about" placeholder="about">
+                    </div>
+                    <div class="form-group">
+                        <label for="imgProfile">Imagen de perfil</label>
+                        <input type="text" ngModel="{{editPersona?.imgProfile}}" name="imgProfile" class="form-control"
+                            id="imgProfile" placeholder="imgProfile">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button (click)="onUpdatePersona(editForm.value)" data-dismiss="modal"class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

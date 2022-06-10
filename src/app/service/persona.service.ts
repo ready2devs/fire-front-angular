@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { persona } from '../model/persona.model';
+import { Persona } from '../model/persona.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,29 +17,22 @@ export class PersonaService {
 
   constructor(private http: HttpClient) { }
 
-  public getPersona(): Observable<persona>{
+  public getPersona(): Observable<Persona[]>{
   //   return this.http.get<persona>(this.URL+ 'traer/perfil');
-    return this.http.get<persona>(`${this.apiServerUrl}detallepersona/1`);
+    return this.http.get<Persona[]>(`${this.apiServerUrl}persona/todas`);
   }
 
-  public updatePersona(): Observable<persona>{
-    return this.http.put<persona>(`${this.apiServerUrl}editar/persona/1`,persona);
+  public updatePersona(persona: Persona): Observable<Persona>{
+    return this.http.put<Persona>(`${this.apiServerUrl}persona/editar`, persona);
   }
 
-  
+  public addPersona(persona:Persona):Observable<Persona>{
+    return this.http.post<Persona>(`${this.apiServerUrl}persona/agregar`, persona);
+  }
 
-
-  // constructor(private http: HttpClient) { }
-
-  // public getPersona(): Observable<persona[]> {
-  //   return this.http.get<persona[]>(`${this.apiServerUrl}/detallepersona/1`);
-  // }
-
-  // public updatePerson(person: persona): Observable<persona> {
-  //   return this.http.put<persona>(`${this.apiServerUrl}/editar/persona/1`,person);
-  // }
-
-
+  public deletePersona(id:number):Observable<void>{
+    return this.http.delete<void>(`${this.apiServerUrl}persona/borrar/${id}`);
+  }
 
 
 }

@@ -1,33 +1,19 @@
 <div class="container-fluid my-3 px-5">
-
     <article class="proyectos text-bg-light p-3 rounded">
         <div class="container-fluid">
             <div class="row d-flex justify-content-between">
                 <div class="col-10 mb-3">
                     <h4>Proyectos</h4>
                 </div>
-                <div *ngIf="isUserLogged" class="col-2 div_add">
-                    <button class="btn btn-right" data-bs-toggle="modal"><i class="fa fa-plus"></i></button>
-                    <!-- <i class="fa-solid fa-plus"></i> -->
+                <div *ngIf="isUserLogged" class="col-2 div_add" (click)="onOpenModal(null!, 'add')">
+                    <button class="btn btn-right" data-toggle="modal"><i class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
         
-        <!-- <div class="row d-flex justify-content-between">
-            <div class="col-10 mb-3">
-                <h4>Proyectos</h4>
-            </div>
-            <div class="div_add">
-                <i class="fa-solid fa-plus"></i>
-            </div>
-        </div> -->
-
-    
         <div class="container-fluid my-0">
 
             <div class="d-flex align-content-start flex-wrap my-3" *ngFor="let proyecto of proyectos">
-                
-                <!-- <div class="descripcion-proyecto mb-4 ml-3 pl-3 col-sm-10 col-md-8 col-lg-7"></div> -->
                 
                 <div class="descripcion-proyecto mb-4 ml-3 pl-3 col-7">
                     <h6 class="titulo-proyecto">{{proyecto.title}}</h6>  
@@ -36,75 +22,152 @@
                     <p class="separador p-0" style="display:inline">-</p>
                     <p class="fecha-finalizacion-proyecto p-0" style="display:inline">{{proyecto.end}}</p>
                 </div>
-
-                <!-- <div class="foto-proyecto ml-3 mb-4 col-sm-11 col-md-3 col-lg-4"></div> -->
-
                 <div class="foto-proyecto ml-3 mb-4 col-3">
                     <img src="{{proyecto.imgProyecto}}" alt="Imagen proyecto" class="img-fluid">
                 </div>
 
                 <div *ngIf="isUserLogged" class="data-control col-2 d-inline-flex justify-content-end align-items-end flex-column p-0 m-0">
                     <div class="btn-edit">
-                        <button class="btn btn-right" data-bs-toggle="modal" ><i class="fa fa-pen"></i></button>
+                        <button class="btn btn-right" data-toggle="modal" (click)="onOpenModal(proyecto, 'edit')"><i class="fa fa-pen"></i></button>
                     </div>
                     <div class="btn-edit">
-                        <button class="btn btn-right" ><i class="fa fa-trash"></i></button>
+                        <button class="btn btn-right" (click)="onOpenModal(proyecto, 'delete')"><i class="fa fa-trash"></i></button>
                     </div>
                 </div>
-
-                <!-- <div class="div_deladd col-sm-1 col-md-1 col-lg-1 d-flex justify-content-end ">
-                    <ul>                         
-                        <li><i class="fa-solid fa-trash"></i></li>                            
-                        <li><i class="fa-solid fa-pen"></i></li> 
-                    </ul>
-                </div> -->
 
             </div>
 
-            <!-- <div class="d-flex align-content-start flex-wrap">
-                <div class="descripcion-proyecto mb-4 ml-3 pl-3 col-sm-11 col-md-8 col-lg-7">
-                    <h6 class="titulo-proyecto">Tablero de control operativo</h6>  
-                    <p class="detalle-proyecto"> Diseño de tablero de control operativo para la visualización de metricas de gestión - Uso de la herramienta Power BI para la visualización de indicadores y el acceso a reportes.</p>
-                    <p class="fecha-inicio-proyecto p-0" style="display:inline">2019</p>
-                    <p class="separador p-0" style="display:inline">-</p>
-                    <p class="fecha-finalizacion-proyecto p-0" style="display:inline">2019</p>
-                </div>
-                <div class="foto-proyecto ml-3 mb-4 col-sm-11 col-md-3 col-lg-4">
-                    <img src="../../../assets/Power Business Intelligence (BI).png" alt="Imagen portfolio" class="img-fluid">
-                </div>
-
-                <div class="div_deladd col-sm-1 col-md-1 col-lg-1 d-flex justify-content-end ">
-                    <ul>                         
-                        <li><i class="fa-solid fa-trash"></i></li>                            
-                        <li><i class="fa-solid fa-pen"></i></li> 
-                    </ul>
-                </div>
-
-            </div> -->
-            
-            
-            <!-- <div class="row m-0 p-0">
-                <div class="col-2">
-                    <img src="https://yt3.ggpht.com/9upo5zbtXzvItj8IMHF1X9hI95x4YOeGCApLk1DhMQCHftmJvf2GWmbJXrC1TKCrn-AyQ2txBw=s900-c-k-c0x00ffffff-no-rj" alt="logo-experiencia" class="img-thumbnail img-logo-responsive"/>
-                </div>
-                <div class="col-8 descripcion-proyecto ml-3">
-                    <h5 class="titulo-proyecto">Portfolio Web Fullstack</h5>
-                    <p class="institucion-proyecto">Argentina Programa</p>
-                    <p>Diciembre 2021 - Actualidad</p>
-                    <p>Angular - Java/SpringBoot - MySql</p>
-                    <p><a href="https://www.google.com">https://fire-front-angular.web.app/</a></p>
-                </div>
-                <div class="col-2 div_deladd align-self-end">
-                    <ul>                         
-                        <li><i class="fa-solid fa-trash"></i></li>                            
-                        <li><i class="fa-solid fa-pen"></i></li>  
-                    </ul>
-                </div>
-            </div> -->
-
-
-            
-
         </div>
+
+        <div *ngIf="proyectos?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+            <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">SIN PROYECTOS QUE MOSTRAR!</h4>
+            <p>No se encontraron proyectos cargados. Pruebe cargar uno :)</p>
+            </div>
+        </div>
+
     </article>
+</div>
+
+
+
+<!-- Modal Agregar -->
+
+<div class="modal fade" id="addProyectoModal" tabindex="-1" role="dialog" aria-labelledby="addProyectoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="addProyectoModalLabel">Agregar Proyecto</h5>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+            <form #addForm="ngForm" (ngSubmit)="onAddProyecto(addForm)">
+                <div class="form-group">
+                    <label for="title">Título del proyecto</label>
+                    <input type="text" ngModel name="title" class="form-control" id="title" placeholder=""
+                        required>
+                </div>
+                <div class="form-group">
+                  <label for="detail">Descripción</label>
+                  <input type="text" ngModel name="detail" class="form-control" id="detail" placeholder=""
+                      required>
+              </div>
+                <div class="form-group">
+                    <label for="start">Año inicio</label>
+                    <input type="text" ngModel name="start" class="form-control" id="start"
+                        placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="end">Año fin</label>
+                    <input type="text" ngModel name="end" class="form-control" id="end"
+                        placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="imgProyecto">Imagen del proyecto</label>
+                    <input type="text" ngModel name="imgProyecto" class="form-control" id="imgProyecto"
+                        placeholder="" required>
+                </div>
+            <div class="modal-footer">
+               <button type="button" id="add-proyecto-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+               <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Guardar cambios</button>
+            </div>
+            </form>
+         </div>
+      </div>
+    </div>
+    </div>
+
+
+
+<!-- Modal Editar -->
+
+<div class="modal fade" id="editProyectoModal" tabindex="-1" aria-labelledby="editProyectoModalLabel"
+aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editProyectoModalLabel">Editar {{editProyecto?.title}}</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form #editForm="ngForm">
+                    <div class="form-group">
+                        <label for="title">Título del proyecto</label>
+                        <input type="text" ngModel="{{editProyecto?.title}}" name="title" class="form-control"
+                            id="title" placeholder="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="detail">Descripción</label>
+                        <input type="text" ngModel="{{editProyecto?.detail}}" name="detail" class="form-control"
+                            id="detail" placeholder="detail">
+                    </div>
+                    <input type="hidden" ngModel="{{editProyecto?.id}}" name="id" class="form-control" id="id"
+                        placeholder="Id">
+                    <div class="form-group">
+                        <label for="start">Año inicio</label>
+                        <input type="text" ngModel="{{editProyecto?.start}}" name="start" class="form-control"
+                            id="start" placeholder="Start">
+                    </div>
+                    <div class="form-group">
+                        <label for="end">Año Fin</label>
+                        <input type="text" ngModel="{{editProyecto?.end}}" name="end" class="form-control"
+                            id="end" placeholder="End">
+                    </div>
+                    <div class="form-group">
+                        <label for="imgProyecto">Imagen del proyecto</label>
+                        <input type="text" ngModel="{{editProyecto?.imgProyecto}}" name="imgProyecto" class="form-control"
+                            id="imgProyecto" placeholder="imgProyecto">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button (click)="onUpdateProyecto(editForm.value)" data-dismiss="modal"class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Borrar -->
+
+
+<div class="modal fade" id="deleteProyectoModal" tabindex="-1" aria-labelledby="deleteProyectoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Eliminar {{deleteProyecto?.title}}</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Seguro que quiere eliminar {{deleteProyecto?.title}}?</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button (click)="onDeleteProyecto(deleteProyecto.id)" class="btn btn-danger" data-dismiss="modal">Si</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

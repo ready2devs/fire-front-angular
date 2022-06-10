@@ -17,6 +17,10 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+
+
 // import { LoginDtoComponent } from './config/login-dto/login-dto.component';
 
 
@@ -45,7 +49,9 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     NgCircleProgressModule.forRoot({}),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    TooltipModule.forRoot()
     
   ],
   providers: [],

@@ -16,8 +16,8 @@ export class EducacionComponent implements OnInit {
 
   public educaciones:Educacion[]=[];
 
-  public editEducacion!:Educacion;
-  public deleteEducacion!:Educacion;
+  public editEducacion!: Educacion;
+  public deleteEducacion!: Educacion;
 
 
   isUserLogged: Boolean = false;
@@ -29,10 +29,10 @@ export class EducacionComponent implements OnInit {
   constructor(
     private educacionService:EducacionService,
     private authService: AuthService,
+    // private formBuilder: FormBuilder
     
     
-    
-    private formBuilder: FormBuilder) { 
+    ) { 
      
     //   this.educationForm = this.formBuilder.group({
     //     id: [''],
@@ -57,19 +57,19 @@ export class EducacionComponent implements OnInit {
     this.isUserLogged = this.authService.isUserLogged();
     
     
-    this.reloadData();
+    // this.reloadData();
     
 
   }
 
 
-  private reloadData() {
-    this.educacionService.getEducacion().subscribe(
-      (data) => {
-        this.educaciones = data;
-      }
-    );
-  }
+  // private reloadData() {
+  //   this.educacionService.getEducacion().subscribe(
+  //     (data) => {
+  //       this.educaciones = data;
+  //     }
+  //   );
+  // }
 
 
   // traigo datos en lista
@@ -91,25 +91,27 @@ export class EducacionComponent implements OnInit {
 
 
 
-  // seteo de funciones crud
+  // seteo de funciones de los modals
 
-  public onOpenModal(educacion:Educacion, mode:string):void{
+  public onOpenModal(educacion:Educacion, mode:string): void{
     const container=document.getElementById('main-container');
     const button=document.createElement('button');
     button.type = 'button';
-    // button.style.display='none';
-    button.setAttribute('data-bs-toggle','modal');
+    button.style.display='none';
+    button.setAttribute('data-toggle','modal');
     if(mode==='add'){
-      button.setAttribute('data-bs-toggle','#addEducationModal');
-    }else if(mode==='delete'){
+      button.setAttribute('data-target','#addEducationModal');
+    }
+    else if(mode==='delete'){
       this.deleteEducacion=educacion;
-      button.setAttribute('data-bs-toggle','#deleteEducationModal');
-    }else if(mode==='edit'){
+      button.setAttribute('data-target','#deleteEducationModal');
+    }
+    else if(mode==='edit'){
       this.editEducacion=educacion;
-      button.setAttribute('data-bs-toggle','#editEducationModal');
+      button.setAttribute('data-target','#editEducationModal');
     }
 
-    container?.appendChild(button);
+    container!.appendChild(button);
     button.click();
 
 
@@ -119,16 +121,16 @@ export class EducacionComponent implements OnInit {
 
 
   public onAddEducation(addForm: NgForm): void{
-    document.getElementById('add-education-form')!.click();
+    document.getElementById('add-education-form')?.click();
     this.educacionService.addEducacion(addForm.value).subscribe({
       next: (response:Educacion) => {
         console.log(response);
         this.getdatosEdu();
         addForm.reset();
       },
-      error:(error:HttpErrorResponse)=>{
+      error: (error:HttpErrorResponse)=>{
         alert(error.message);
-        addForm.reset()
+        addForm.reset();
       }
 
     })
@@ -150,10 +152,10 @@ export class EducacionComponent implements OnInit {
   // }
 
 
-  public onUpdateEducacion(id: number, educacion: Educacion){
-    this.editEducacion=educacion;
-    document.getElementById('add-education-form')?.click();
-    this.educacionService.updateEducacion(id, educacion).subscribe({
+  public onUpdateEducation(educacion:Educacion):void{
+    // this.editEducacion=educacion;
+    // document.getElementById('add-education-form')?.click();
+    this.educacionService.updateEducacion(educacion).subscribe({
       next: (response:Educacion) => {
         console.log(response);
         this.getdatosEdu();
@@ -167,7 +169,7 @@ export class EducacionComponent implements OnInit {
   }
 
 
-  public onDeleteEducacion(id: number):void{
+  public onDeleteEducation(id: number):void{
     
     this.educacionService.deleteEducacion(id).subscribe({
       next: (response:void) => {
@@ -181,16 +183,6 @@ export class EducacionComponent implements OnInit {
     })
      
   }
-
-
-
-
-
-
-
-
-
-
 
 
 
