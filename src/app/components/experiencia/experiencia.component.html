@@ -12,10 +12,10 @@
         </div>
         <div class="container-fluid">
             <div class="row my-4" *ngFor="let experiencia of experiencias">
-                <div class="col-2">
-                   <img src="{{experiencia.imgExp}}" alt="logo-experiencia" class="img-thumbnail img-logo-responsive"/>
+                <div class="col-3 col-sm-2">
+                   <img src="{{experiencia.imgExp}}" alt="logo-experiencia" class="img-thumbnail img-fluid"/>
                 </div>
-                <div class="col-8 descripcion-experiencia">
+                <div class="col-8 col-sm-8 descripcion-experiencia">
                    <h5 class="experiencia-puesto">{{experiencia.position}}</h5>
                    <p class="experiencia-descripcion">{{experiencia.description}}</p>
                    <p class="experiencia-anio-inicio" style="display:inline">{{experiencia.start}}</p> <p style="display:inline">-</p>
@@ -23,7 +23,7 @@
                    <p class="experiencia-empresa">{{experiencia.organization}}</p>
                 </div>
                
-                <div *ngIf="isUserLogged" class="data-control col-2 d-inline-flex justify-content-end align-items-end flex-column p-0 m-0">
+                <div *ngIf="isUserLogged" class="data-control col-1 col-sm-2 d-inline-flex justify-content-end align-items-end flex-column p-0 m-0">
                     <div class="btn-edit">
                         <button class="btn btn-right" data-toggle="modal" (click)="onOpenModal(experiencia, 'edit')"><i class="fa fa-pen"></i></button>
                     </div>

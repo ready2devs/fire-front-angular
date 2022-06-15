@@ -13,20 +13,20 @@
         
         <div class="container-fluid my-0">
 
-            <div class="d-flex align-content-start flex-wrap my-3" *ngFor="let proyecto of proyectos">
-                
-                <div class="descripcion-proyecto mb-4 ml-3 pl-3 col-7">
+            <!-- <div class="d-flex align-content-start flex-wrap my-3" *ngFor="let proyecto of proyectos"> -->
+            <div class="row my-4 align-content-start" *ngFor="let proyecto of proyectos">    
+                <div class="descripcion-proyecto mb-4 ml-3 ps-4 pe-5 col 8 col-sm-7">
                     <h6 class="titulo-proyecto">{{proyecto.title}}</h6>  
                     <p class="detalle-proyecto"> {{proyecto.detail}}</p>
                     <p class="fecha-inicio-proyecto p-0" style="display:inline">{{proyecto.start}}</p>
                     <p class="separador p-0" style="display:inline">-</p>
                     <p class="fecha-finalizacion-proyecto p-0" style="display:inline">{{proyecto.end}}</p>
                 </div>
-                <div class="foto-proyecto ml-3 mb-4 col-3">
-                    <img src="{{proyecto.imgProyecto}}" alt="Imagen proyecto" class="img-fluid">
+                <div class="ml-2 mb-4 col-3 p-0">
+                    <img src="{{proyecto.imgProyecto}}" alt="Imagen proyecto" class="img-fluid img-thumbnail foto-proyecto">
                 </div>
 
-                <div *ngIf="isUserLogged" class="data-control col-2 d-inline-flex justify-content-end align-items-end flex-column p-0 m-0">
+                <div *ngIf="isUserLogged" class="data-control col-1 col-sm-2 d-inline-flex justify-content-end align-items-end flex-column p-0 m-0">
                     <div class="btn-edit">
                         <button class="btn btn-right" data-toggle="modal" (click)="onOpenModal(proyecto, 'edit')"><i class="fa fa-pen"></i></button>
                     </div>

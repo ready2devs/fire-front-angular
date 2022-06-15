@@ -41,12 +41,14 @@
     margin: 0px;
 }
 
-.descripcion-proyecto p{
+/* .descripcion-proyecto {
     margin: 0px;
-    padding-right: 3em;
-}
+    padding-right: 2em;
+} */
 
 .foto-proyecto{
     box-shadow: 5px 5px 10px #00000080;
+    margin: 0px;
+    padding: 0px;
 }
 
