@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   // apiBaseUrl: 'http://localhost:8080/'
 
-  apiBaseUrl: 'https://app-lls.herokuapp.com/'
+  apiBaseUrl: 'https://back-springboot-production.up.railway.app/',
 };
 
 /*
