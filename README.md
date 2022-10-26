@@ -9,4 +9,5 @@ Infraestructura para la capa de back-end hospedada en: Railway
 Infraestructura para la capa de front-end hospedada en: Firebase
 Infraestructura para la capa de persistecia: Planetscale
 
+back en railway: https://back-springboot-production.up.railway.app/
 Link de visualización (host de Firebase) -- https://lucianoleandrosica.web.app/
