@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   // apiBaseUrl: 'http://localhost:8080/'
 
-  apiBaseUrl: 'https://back-springboot-production.up.railway.app/',
+  apiBaseUrl: 'https://portfolioback-ready2devs.koyeb.app/',
 };
 
 /*
