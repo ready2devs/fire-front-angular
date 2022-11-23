@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://back-springboot-production.up.railway.app/',
+  apiBaseUrl: 'https://portfolioback-ready2devs.koyeb.app/',
 };
