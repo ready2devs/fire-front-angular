@@ -11,5 +11,5 @@ Infraestructura para la capa de persistecia: Planetscale
 
 back en railway: https://portfolioback-ready2devs.koyeb.app/
 Link de visualización (host de Firebase) -- https://lucianoleandrosica.web.app/
-Repositorio Publico Front-end: https://github.com/ready2devs/fire-front-angular
+Repositorio público Front-end: https://github.com/ready2devs/fire-front-angular
 Repositorio público Back-end: https://github.com/ready2devs/public-back-springboot-.git
