@@ -9,7 +9,7 @@ Infraestructura para la capa de back-end hospedada en: Koyeb
 Infraestructura para la capa de front-end hospedada en: Firebase
 Infraestructura para la capa de persistecia: Planetscale
 
-back en koyeb: https://portfolioback-ready2devs.koyeb.app/
+Back en koyeb: https://portfolioback-ready2devs.koyeb.app/
 Link de visualización (host de Firebase) -- https://lucianoleandrosica.web.app/
-Repositorio público Front-end: https://github.com/ready2devs/fire-front-angular
+Repositorio público desplegado en Firebase de Front-end: https://github.com/ready2devs/fire-front-angular
 Repositorio público Back-end: https://github.com/ready2devs/public-back-springboot-.git
